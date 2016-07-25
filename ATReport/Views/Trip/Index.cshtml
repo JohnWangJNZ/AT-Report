@@ -1,0 +1,75 @@
+﻿@model IEnumerable<ATReport.Models.Trip>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Route.AgencyID)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.CalendarID)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.HeadSign)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.DirectionID)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.BlockID)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ShapeID)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ShortName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Type)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Route.AgencyID)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.CalendarID)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.HeadSign)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.DirectionID)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.BlockID)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ShapeID)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ShortName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Type)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.ID }) |
+            @Html.ActionLink("Details", "Details", new { id=item.ID }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.ID })
+        </td>
+    </tr>
+}
+
+</table>
